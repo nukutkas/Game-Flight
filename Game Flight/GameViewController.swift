@@ -10,6 +10,21 @@ import QuartzCore
 import SceneKit
 
 class GameViewController: UIViewController {
+    
+    func addShip() {
+        // Get a scene with the ship
+        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        
+        // Find ship in the scene
+        let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
+       
+        // Get the scene
+        let scnView = self.view as! SCNView
+        
+        // Add ship to the scene
+        scnView.scene?.rootNode.addChildNode(ship)
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
