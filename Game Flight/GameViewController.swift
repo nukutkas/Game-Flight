@@ -17,6 +17,15 @@ class GameViewController: UIViewController {
         
         // Find ship in the scene
         let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
+        
+        // Set ship coordinates
+         
+        
+        // Make the ship fly to the origin
+        ship.runAction(SCNAction.move(to: SCNVector3(), duration: 5)) {
+            print(#line, #function, "GAME OVER")
+            ship.removeFromParentNode()
+        }
        
         // Get the scene
         let scnView = self.view as! SCNView
@@ -56,7 +65,7 @@ class GameViewController: UIViewController {
         
         // retrieve the ship node
         let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
-        ship.position.z = -90
+        ship.removeFromParentNode()
         
         // animate the 3d object
         ship.runAction(SCNAction.move(to: SCNVector3(), duration: 5)) {
