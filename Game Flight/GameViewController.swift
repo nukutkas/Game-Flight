@@ -19,12 +19,16 @@ class GameViewController: UIViewController {
         let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
         
         // Set ship coordinates
+        ship.position.z = -105
          
-        
         // Make the ship fly to the origin
         ship.runAction(SCNAction.move(to: SCNVector3(), duration: 5)) {
             print(#line, #function, "GAME OVER")
             ship.removeFromParentNode()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.addShip()
+            }
         }
        
         // Get the scene
@@ -67,12 +71,6 @@ class GameViewController: UIViewController {
         let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
         ship.removeFromParentNode()
         
-        // animate the 3d object
-        ship.runAction(SCNAction.move(to: SCNVector3(), duration: 5)) {
-            print(#line, #function, "GAME OVER")
-            ship.removeFromParentNode()
-        }
-        
         // retrieve the SCNView
         let scnView = self.view as! SCNView
         
@@ -91,6 +89,9 @@ class GameViewController: UIViewController {
         // add a tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         scnView.addGestureRecognizer(tapGesture)
+        
+        //Add the ship to the scene
+        addShip()
     }
     
     @objc
