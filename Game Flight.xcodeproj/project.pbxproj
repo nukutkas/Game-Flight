@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E5669A52263453D800DE3CAB /* Screenshot01.png in Resources */ = {isa = PBXBuildFile; fileRef = E5669A50263453D800DE3CAB /* Screenshot01.png */; };
-		E5669A53263453D800DE3CAB /* Screenshot02.png in Resources */ = {isa = PBXBuildFile; fileRef = E5669A51263453D800DE3CAB /* Screenshot02.png */; };
+		E5669A572634552800DE3CAB /* Screenshot02.png in Resources */ = {isa = PBXBuildFile; fileRef = E5669A562634552800DE3CAB /* Screenshot02.png */; };
+		E5669A5B2634554B00DE3CAB /* Screenshot01.png in Resources */ = {isa = PBXBuildFile; fileRef = E5669A5A2634554B00DE3CAB /* Screenshot01.png */; };
 		E5B58EA1263068EC002A05DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B58EA0263068EC002A05DD /* AppDelegate.swift */; };
 		E5B58EA3263068EC002A05DD /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B58EA2263068EC002A05DD /* art.scnassets */; };
 		E5B58EA5263068EC002A05DD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B58EA4263068EC002A05DD /* GameViewController.swift */; };
@@ -17,8 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E5669A50263453D800DE3CAB /* Screenshot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot01.png; sourceTree = "<group>"; };
-		E5669A51263453D800DE3CAB /* Screenshot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot02.png; sourceTree = "<group>"; };
+		E5669A562634552800DE3CAB /* Screenshot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot02.png; sourceTree = "<group>"; };
+		E5669A5A2634554B00DE3CAB /* Screenshot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot01.png; sourceTree = "<group>"; };
 		E5B58E9D263068EC002A05DD /* Game Flight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Flight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B58EA0263068EC002A05DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5B58EA2263068EC002A05DD /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -42,8 +42,8 @@
 		E5669A4F263453B800DE3CAB /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				E5669A50263453D800DE3CAB /* Screenshot01.png */,
-				E5669A51263453D800DE3CAB /* Screenshot02.png */,
+				E5669A5A2634554B00DE3CAB /* Screenshot01.png */,
+				E5669A562634552800DE3CAB /* Screenshot02.png */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -137,8 +137,8 @@
 			files = (
 				E5B58EA3263068EC002A05DD /* art.scnassets in Resources */,
 				E5B58EAA263068ED002A05DD /* Assets.xcassets in Resources */,
-				E5669A52263453D800DE3CAB /* Screenshot01.png in Resources */,
-				E5669A53263453D800DE3CAB /* Screenshot02.png in Resources */,
+				E5669A572634552800DE3CAB /* Screenshot02.png in Resources */,
+				E5669A5B2634554B00DE3CAB /* Screenshot01.png in Resources */,
 				E5B58EA8263068EC002A05DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
