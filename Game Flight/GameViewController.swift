@@ -11,6 +11,15 @@ import SceneKit
 
 class GameViewController: UIViewController {
     
+    /// Label with the score
+    let scoreLabel = UILabel()
+    
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
     var ship: SCNNode?
     
     func addShip() {
@@ -47,6 +56,11 @@ class GameViewController: UIViewController {
         if let ship = ship {
             scnView.scene?.rootNode.addChildNode(ship)
         }
+    }
+    
+    func setupUI() {
+        scoreLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 100)
+        view.addSubview(scoreLabel )
     }
     
     override func viewDidLoad() {
@@ -102,6 +116,9 @@ class GameViewController: UIViewController {
         
         //Add the ship to the scene
         addShip()
+        
+        //Setup UI
+        setupUI()
     }
     
     @objc
@@ -126,6 +143,7 @@ class GameViewController: UIViewController {
             
             // on completion - unhighlight
             SCNTransaction.completionBlock = {
+                self.score += 1
                 self.ship?.removeFromParentNode()
                 self.addShip()
             }
