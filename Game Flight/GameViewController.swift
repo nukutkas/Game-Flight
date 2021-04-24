@@ -11,9 +11,13 @@ import SceneKit
 
 class GameViewController: UIViewController {
     
+    /// Duration of the plane animation
+    var duration : TimeInterval = 5
+    
     /// Label with the score
     let scoreLabel = UILabel()
     
+    ///Number of planes shut down
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
@@ -39,8 +43,9 @@ class GameViewController: UIViewController {
         // set ship orientation
         ship?.look(at: SCNVector3(2 * x, 2 * y, 2 * z))
         
+        // MARK: - GAME OVER
         // Make the ship fly to the origin
-        ship?.runAction(SCNAction.move(to: SCNVector3(), duration: 5)) {
+        ship?.runAction(SCNAction.move(to: SCNVector3(), duration: duration)) {
             DispatchQueue.main.async {
                 self.scoreLabel.text = "GAME OVER\nFinal Score: \(self.score)"
             }
@@ -150,8 +155,9 @@ class GameViewController: UIViewController {
             SCNTransaction.begin()
             SCNTransaction.animationDuration = 0.2
             
-            // on completion - unhighlight
+            // MARK: - KILL THE PLAIN
             SCNTransaction.completionBlock = {
+                self.duration *= 0.9
                 self.score += 1
                 self.ship?.removeFromParentNode()
                 self.addShip()
