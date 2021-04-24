@@ -52,6 +52,7 @@ class GameViewController: UIViewController {
             self.ship?.removeFromParentNode()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.duration = 5
                 self.score = 0
                 self.addShip()
             }
