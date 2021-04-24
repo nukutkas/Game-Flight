@@ -19,7 +19,11 @@ class GameViewController: UIViewController {
         let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
         
         // Set ship coordinates
-        ship.position.z = -105
+        let x = Int.random(in: -25 ... 25)
+        let y = Int.random(in: -25 ... 25)
+        let z = -105
+        
+        ship.position = SCNVector3(x, y, z)
          
         // Make the ship fly to the origin
         ship.runAction(SCNAction.move(to: SCNVector3(), duration: 5)) {
