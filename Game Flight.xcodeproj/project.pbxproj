@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E5669A572634552800DE3CAB /* Screenshot02.png in Resources */ = {isa = PBXBuildFile; fileRef = E5669A562634552800DE3CAB /* Screenshot02.png */; };
 		E5669A5B2634554B00DE3CAB /* Screenshot01.png in Resources */ = {isa = PBXBuildFile; fileRef = E5669A5A2634554B00DE3CAB /* Screenshot01.png */; };
+		E5669A5E263457ED00DE3CAB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E5669A5D263457ED00DE3CAB /* README.md */; };
 		E5B58EA1263068EC002A05DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B58EA0263068EC002A05DD /* AppDelegate.swift */; };
 		E5B58EA3263068EC002A05DD /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B58EA2263068EC002A05DD /* art.scnassets */; };
 		E5B58EA5263068EC002A05DD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B58EA4263068EC002A05DD /* GameViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		E5669A562634552800DE3CAB /* Screenshot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot02.png; sourceTree = "<group>"; };
 		E5669A5A2634554B00DE3CAB /* Screenshot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot01.png; sourceTree = "<group>"; };
+		E5669A5D263457ED00DE3CAB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E5B58E9D263068EC002A05DD /* Game Flight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Flight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B58EA0263068EC002A05DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5B58EA2263068EC002A05DD /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				E5B58EA6263068EC002A05DD /* Main.storyboard */,
 				E5B58EA9263068ED002A05DD /* Assets.xcassets */,
 				E5B58EAB263068ED002A05DD /* Info.plist */,
+				E5669A5D263457ED00DE3CAB /* README.md */,
 			);
 			path = "Game Flight";
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5669A5E263457ED00DE3CAB /* README.md in Resources */,
 				E5B58EA3263068EC002A05DD /* art.scnassets in Resources */,
 				E5B58EAA263068ED002A05DD /* Assets.xcassets in Resources */,
 				E5669A572634552800DE3CAB /* Screenshot02.png in Resources */,
@@ -300,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.nikkochet.Game-Flight";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,7 +323,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.nikkochet.Game-Flight";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
