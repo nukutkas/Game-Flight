@@ -41,10 +41,13 @@ class GameViewController: UIViewController {
         
         // Make the ship fly to the origin
         ship?.runAction(SCNAction.move(to: SCNVector3(), duration: 5)) {
-            print(#line, #function, "GAME OVER")
+            DispatchQueue.main.async {
+                self.scoreLabel.text = "GAME OVER\nFinal Score: \(self.score)"
+            }
             self.ship?.removeFromParentNode()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.score = 0
                 self.addShip()
             }
         }
@@ -59,7 +62,13 @@ class GameViewController: UIViewController {
     }
     
     func setupUI() {
-        scoreLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 100)
+        score = 0
+        scoreLabel.font = UIFont.systemFont(ofSize: 30)
+        scoreLabel.frame = CGRect (x: 0, y: 0, width: view.frame.width, height: 100)
+        scoreLabel.numberOfLines = 0
+        scoreLabel.textAlignment = .center
+        scoreLabel.textColor = .white
+        
         view.addSubview(scoreLabel )
     }
     
@@ -75,7 +84,7 @@ class GameViewController: UIViewController {
         scene.rootNode.addChildNode(cameraNode)
         
         // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 10)
         
         // create and add a light to the scene
         let lightNode = SCNNode()
