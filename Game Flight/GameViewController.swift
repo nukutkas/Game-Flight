@@ -11,28 +11,29 @@ import SceneKit
 
 class GameViewController: UIViewController {
     
+    var ship: SCNNode?
+    
     func addShip() {
         
         // Get a scene with the ship
         let scene = SCNScene(named: "art.scnassets/ship.scn")!
     
-        
         // Find ship in the scene
-        let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
+        ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
         
         // Set ship coordinates
         let x = Int.random(in: -25 ... 25)
         let y = Int.random(in: -25 ... 25)
         let z = -100
-        ship.position = SCNVector3(x, y, z)
+        ship?.position = SCNVector3(x, y, z)
         
         // set ship orientation
-        ship.look(at: SCNVector3(2 * x, 2 * y, 2 * z))
+        ship?.look(at: SCNVector3(2 * x, 2 * y, 2 * z))
         
         // Make the ship fly to the origin
-        ship.runAction(SCNAction.move(to: SCNVector3(), duration: 5)) {
+        ship?.runAction(SCNAction.move(to: SCNVector3(), duration: 5)) {
             print(#line, #function, "GAME OVER")
-            ship.removeFromParentNode()
+            self.ship?.removeFromParentNode()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.addShip()
@@ -43,8 +44,9 @@ class GameViewController: UIViewController {
         let scnView = self.view as! SCNView
         
         // Add ship to the scene
-        scnView.scene?.rootNode.addChildNode(ship)
-        
+        if let ship = ship {
+            scnView.scene?.rootNode.addChildNode(ship)
+        }
     }
     
     override func viewDidLoad() {
@@ -120,16 +122,12 @@ class GameViewController: UIViewController {
             
             // highlight it
             SCNTransaction.begin()
-            SCNTransaction.animationDuration = 0.5
+            SCNTransaction.animationDuration = 0.2
             
             // on completion - unhighlight
             SCNTransaction.completionBlock = {
-                SCNTransaction.begin()
-                SCNTransaction.animationDuration = 0.5
-                
-                material.emission.contents = UIColor.black
-                
-                SCNTransaction.commit()
+                self.ship?.removeFromParentNode()
+                self.addShip()
             }
             
             material.emission.contents = UIColor.red
