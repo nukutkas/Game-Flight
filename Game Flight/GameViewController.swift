@@ -12,8 +12,10 @@ import SceneKit
 class GameViewController: UIViewController {
     
     func addShip() {
+        
         // Get a scene with the ship
         let scene = SCNScene(named: "art.scnassets/ship.scn")!
+    
         
         // Find ship in the scene
         let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
@@ -21,10 +23,12 @@ class GameViewController: UIViewController {
         // Set ship coordinates
         let x = Int.random(in: -25 ... 25)
         let y = Int.random(in: -25 ... 25)
-        let z = -105
-        
+        let z = -100
         ship.position = SCNVector3(x, y, z)
-         
+        
+        // set ship orientation
+        ship.look(at: SCNVector3(2 * x, 2 * y, 2 * z))
+        
         // Make the ship fly to the origin
         ship.runAction(SCNAction.move(to: SCNVector3(), duration: 5)) {
             print(#line, #function, "GAME OVER")
@@ -34,15 +38,15 @@ class GameViewController: UIViewController {
                 self.addShip()
             }
         }
-       
+        
         // Get the scene
         let scnView = self.view as! SCNView
         
         // Add ship to the scene
         scnView.scene?.rootNode.addChildNode(ship)
-
+        
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,7 +86,7 @@ class GameViewController: UIViewController {
         scnView.scene = scene
         
         // allows the user to manipulate the camera
-        scnView.allowsCameraControl = true
+        scnView.allowsCameraControl = false
         
         // show statistics such as fps and timing information
         scnView.showsStatistics = true
@@ -149,5 +153,5 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
+    
 }
