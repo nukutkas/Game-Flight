@@ -21,6 +21,7 @@ class GameViewController: UIViewController {
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
+            scoreLabel.textColor = .white
         }
     }
     
@@ -72,7 +73,7 @@ class GameViewController: UIViewController {
     func setupUI() {
         score = 0
         scoreLabel.font = UIFont.systemFont(ofSize: 30)
-        scoreLabel.frame = CGRect (x: 0, y: 0, width: view.frame.width, height: 100)
+        scoreLabel.frame = CGRect (x: 0, y: 0, width: view.frame.width, height: 150)
         scoreLabel.numberOfLines = 0
         scoreLabel.textAlignment = .center
         scoreLabel.textColor = .white
