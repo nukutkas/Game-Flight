@@ -47,7 +47,9 @@ class GameViewController: UIViewController {
         // Make the ship fly to the origin
         ship?.runAction(SCNAction.move(to: SCNVector3(), duration: duration)) {
             DispatchQueue.main.async {
+                self.scoreLabel.textColor = .red
                 self.scoreLabel.text = "\nGAME OVER\nFinal Score: \(self.score)"
+                
             }
             self.ship?.removeFromParentNode()
             
