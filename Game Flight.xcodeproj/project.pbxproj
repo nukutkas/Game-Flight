@@ -50,10 +50,42 @@
 			path = Screenshots;
 			sourceTree = "<group>";
 		};
+		E5857FAD2656EA9900C1EBF6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5B58EA4263068EC002A05DD /* GameViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E5857FAF2656EAB100C1EBF6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E5B58EA6263068EC002A05DD /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E5857FB02656EAC600C1EBF6 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				E5B58EA0263068EC002A05DD /* AppDelegate.swift */,
+				E5B58EAB263068ED002A05DD /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		E5857FB22656EAD200C1EBF6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E5B58EA9263068ED002A05DD /* Assets.xcassets */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		E5B58E94263068EC002A05DD = {
 			isa = PBXGroup;
 			children = (
-				E5669A4F263453B800DE3CAB /* Screenshots */,
 				E5B58E9F263068EC002A05DD /* Game Flight */,
 				E5B58E9E263068EC002A05DD /* Products */,
 			);
@@ -70,13 +102,13 @@
 		E5B58E9F263068EC002A05DD /* Game Flight */ = {
 			isa = PBXGroup;
 			children = (
-				E5B58EA0263068EC002A05DD /* AppDelegate.swift */,
+				E5857FB02656EAC600C1EBF6 /* Supporting files */,
 				E5B58EA2263068EC002A05DD /* art.scnassets */,
-				E5B58EA4263068EC002A05DD /* GameViewController.swift */,
-				E5B58EA6263068EC002A05DD /* Main.storyboard */,
-				E5B58EA9263068ED002A05DD /* Assets.xcassets */,
-				E5B58EAB263068ED002A05DD /* Info.plist */,
+				E5857FAD2656EA9900C1EBF6 /* ViewControllers */,
+				E5857FAF2656EAB100C1EBF6 /* Storyboards */,
+				E5857FB22656EAD200C1EBF6 /* Source */,
 				E5669A5D263457ED00DE3CAB /* README.md */,
+				E5669A4F263453B800DE3CAB /* Screenshots */,
 			);
 			path = "Game Flight";
 			sourceTree = "<group>";
