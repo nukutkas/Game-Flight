@@ -1,6 +1,6 @@
 # Game-Flight
 
-Flight game for testing SceneKit
+Flight game for practice  SceneKit
 
 # Installation
 
